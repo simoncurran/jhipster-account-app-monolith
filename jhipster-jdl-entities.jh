@@ -1,0 +1,37 @@
+entity Customer {
+    accountName String required
+    accountNumber String required     
+}
+
+entity Agreement {
+    agreementNumber String required
+    lob String required
+    premium Float 
+}
+
+entity Broker {
+    brokerNumber String required
+    brokerName String required
+}
+
+entity Address {
+    line1 String required
+    line2 String 
+    city String     
+    state String required maxlength(2)
+    zip String required maxlength(9)   
+}
+
+relationship OneToOne {
+    Customer{address} to Address,
+    Broker{address} to Address
+}
+
+relationship OneToMany {
+	Customer{agreements} to Agreement
+}
+
+relationship ManyToOne {
+	Customer{broker} to Broker,
+	Agreement{broker} to Broker
+}

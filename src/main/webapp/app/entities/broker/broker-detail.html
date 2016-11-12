@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span>Broker</span> {{vm.broker.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Broker Number</span></dt>
+        <dd>
+            <span>{{vm.broker.brokerNumber}}</span>
+        </dd>
+        <dt><span>Broker Name</span></dt>
+        <dd>
+            <span>{{vm.broker.brokerName}}</span>
+        </dd>
+        <dt><span>Address</span></dt>
+        <dd>
+            <a ui-sref="address-detail({id:vm.broker.address.id})">{{vm.broker.address.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="broker-detail.edit({id:vm.broker.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

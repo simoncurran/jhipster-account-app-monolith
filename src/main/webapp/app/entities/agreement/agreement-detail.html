@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Agreement</span> {{vm.agreement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Agreement Number</span></dt>
+        <dd>
+            <span>{{vm.agreement.agreementNumber}}</span>
+        </dd>
+        <dt><span>Lob</span></dt>
+        <dd>
+            <span>{{vm.agreement.lob}}</span>
+        </dd>
+        <dt><span>Premium</span></dt>
+        <dd>
+            <span>{{vm.agreement.premium}}</span>
+        </dd>
+        <dt><span>Customer</span></dt>
+        <dd>
+            <a ui-sref="customer-detail({id:vm.agreement.customer.id})">{{vm.agreement.customer.id}}</a>
+        </dd>
+        <dt><span>Broker</span></dt>
+        <dd>
+            <a ui-sref="broker-detail({id:vm.agreement.broker.id})">{{vm.agreement.broker.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="agreement-detail.edit({id:vm.agreement.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
